@@ -13,6 +13,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// routing
 app.use('/', index);
 
 // catch 404 and forward to error handler
@@ -28,4 +29,4 @@ app.use(function(err, req, res, next) {
   res.send(err.message);
 });
 
-export default app;
+module.exports = app;

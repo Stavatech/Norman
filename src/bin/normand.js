@@ -3,11 +3,11 @@
 /**
  * Module dependencies.
  */
-var config = require('../config/config');
-var debug = require('debug')('web:server');
-var http = require('http');
+const config = require('../config/config');
+const debug = require('debug')('web:server');
+const http = require('http');
 
-var argv = require('minimist')(process.argv.slice(2));
+const argv = require('minimist')(process.argv.slice(2));
 
 /**
  * Get app and config depending on launch mode
@@ -15,19 +15,18 @@ var argv = require('minimist')(process.argv.slice(2));
 var path = '../';
 
 switch (argv.mode) {
-    case 'master': {
+    case 'master': 
         path += 'service/master/service';
-    } 
-    case 'worker': {
+        break;
+    case 'worker':
         path += 'service/worker/service';
-    }
-    case 'web': {
+        break;
+    case 'web':
         path += 'service/web/service';
-    }
-    default: {
+        break;
+    default:
         console.log('Invalid launch mode');
         process.exit(1);
-    }
 }
 
 var app = require(path);

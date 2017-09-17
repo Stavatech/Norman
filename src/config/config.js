@@ -1,11 +1,11 @@
-import master from '/master';
-import node from '/node';
-import web from '/web';
-import environ from '/environ';
+const master = require('./master');
+const worker = require('./worker');
+const web = require('./web');
+const environ = require('./environ');
 
-export default {
+module.exports = {
     master,
-    node,
+    worker,
     web,
     environ
 };
